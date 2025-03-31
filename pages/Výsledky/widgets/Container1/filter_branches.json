@@ -4,7 +4,7 @@
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "bottomRow": 7,
   "boxShadow": "none",
-  "defaultOptionValue": "",
+  "defaultOptionValue": "{{ ((options, serverSideFiltering) => ( branches.data.map( (obj) =>{ return  {'label': obj.name, 'value': obj.id } })[0]))(filter_branches.options, filter_branches.serverSideFiltering) }}",
   "dynamicBindingPathList": [
     {
       "key": "sourceData"
@@ -14,6 +14,9 @@
     },
     {
       "key": "borderRadius"
+    },
+    {
+      "key": "defaultOptionValue"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
