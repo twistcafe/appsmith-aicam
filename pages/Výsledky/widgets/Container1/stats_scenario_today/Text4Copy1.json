@@ -41,7 +41,7 @@
   "responsiveBehavior": "fill",
   "rightColumn": 63,
   "shouldTruncate": false,
-  "text": "{{stats.data[0].success_ratio_percent}}%",
+  "text": "{{\nfilter_scenario.filterText ? stats.data[0].success_ratio_percent : '0'\n}}%",
   "textAlign": "CENTER",
   "textColor": "#231F20",
   "topRow": 4,
