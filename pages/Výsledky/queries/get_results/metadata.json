@@ -27,7 +27,7 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": false,
+    "executeOnLoad": true,
     "name": "get_results",
     "pageId": "Výsledky",
     "userSetOnLoad": true
