@@ -27,7 +27,7 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": false,
+    "executeOnLoad": true,
     "name": "stats_scenario_camera",
     "pageId": "Výsledky",
     "userSetOnLoad": false

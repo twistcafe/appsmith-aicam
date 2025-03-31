@@ -41,7 +41,7 @@
   "responsiveBehavior": "fill",
   "rightColumn": 63,
   "shouldTruncate": false,
-  "text": "{{filter_scenario.filterText ? stats.data[2].success_ratio_percent : 0}}%",
+  "text": "{{filter_scenario.filterText ? stats_scenario_camera.data[2].success_ratio_percent : 0}}%",
   "textAlign": "CENTER",
   "textColor": "#231F20",
   "topRow": 4,
