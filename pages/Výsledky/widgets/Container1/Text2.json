@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 98,
+  "bottomRow": 93,
   "dynamicBindingPathList": [
     {
       "key": "truncateButtonColor"
@@ -30,8 +30,8 @@
   "mobileRightColumn": 16,
   "mobileTopRow": 83,
   "needsErrorInfo": false,
-  "originalBottomRow": 98,
-  "originalTopRow": 94,
+  "originalBottomRow": 93,
+  "originalTopRow": 89,
   "overflow": "NONE",
   "parentColumnSpace": 3.7265625,
   "parentId": "213x1rwnxe",
@@ -43,7 +43,7 @@
   "text": "Aktualizujeme každou minutu.",
   "textAlign": "LEFT",
   "textColor": "#231F20",
-  "topRow": 94,
+  "topRow": 89,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",
   "version": 1,
