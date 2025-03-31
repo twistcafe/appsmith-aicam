@@ -93,6 +93,9 @@
     },
     {
       "key": "primaryColumns.Status.computedValue"
+    },
+    {
+      "key": "isVisible"
     }
   ],
   "dynamicPropertyPathList": [
@@ -104,6 +107,9 @@
     },
     {
       "key": "primaryColumns.Created_At.inputFormat"
+    },
+    {
+      "key": "isVisible"
     }
   ],
   "dynamicTriggerPathList": [
@@ -117,7 +123,7 @@
   "inlineEditingSaveOption": "ROW_LEVEL",
   "isLoading": false,
   "isSortable": true,
-  "isVisible": true,
+  "isVisible": "{{Array.isArray(get_results.data)}}",
   "isVisibleDownload": false,
   "isVisibleFilters": false,
   "isVisiblePagination": true,
