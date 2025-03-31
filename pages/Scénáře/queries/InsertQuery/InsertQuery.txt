@@ -1,0 +1,6 @@
+INSERT INTO aicam_scenarios (
+	name,
+	prompt)
+VALUES (
+	'{{insert_form.formData.name}}',
+	'{{insert_form.formData.prompt}}');

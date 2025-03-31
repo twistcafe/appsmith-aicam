@@ -1,0 +1,8 @@
+{{
+	{
+		photo: FilePicker1.files[0].data,
+		filename: FilePicker1.files[0].name,
+		filetype: FilePicker1.files[0].type,
+		prompt: Input1.text
+	}
+}}

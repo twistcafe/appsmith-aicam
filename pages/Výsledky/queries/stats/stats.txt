@@ -1,0 +1,27 @@
+SELECT 
+  'today' AS label,
+  IFNULL(CEIL(SUM(CASE WHEN status = 'success' THEN 1 ELSE 0 END) / NULLIF(COUNT(*), 0) * 100), 0) AS success_ratio_percent
+FROM aicam_results
+WHERE DATE(created_at) = CURDATE()
+
+UNION ALL
+
+SELECT 
+  'yesterday' AS label,
+  IFNULL(CEIL(SUM(CASE WHEN status = 'success' THEN 1 ELSE 0 END) / NULLIF(COUNT(*), 0) * 100), 0) AS success_ratio_percent
+FROM aicam_results
+WHERE DATE(created_at) = CURDATE() - INTERVAL 1 DAY
+
+UNION ALL
+
+SELECT 
+  'last_7_days_avg' AS label,
+  IFNULL(CEIL(AVG(daily_ratio)), 0) AS success_ratio_percent
+FROM (
+  SELECT 
+    DATE(created_at) AS day,
+    SUM(CASE WHEN status = 'success' THEN 1 ELSE 0 END) / NULLIF(COUNT(*), 0) * 100 AS daily_ratio
+  FROM aicam_results
+  WHERE created_at >= CURDATE() - INTERVAL 6 DAY
+  GROUP BY DATE(created_at)
+) AS daily_stats;

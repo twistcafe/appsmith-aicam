@@ -1,0 +1,8 @@
+SELECT 
+  b.id,
+  b.branch,
+  b.name
+FROM aicam_branches b
+INNER JOIN aicam_branch_scenarios bs 
+  ON bs.branch_id = b.id
+WHERE bs.scenario_id = {{data_table.selectedRow.id}};

@@ -1,0 +1,1 @@
+SELECT * FROM aicam_scenarios WHERE enabled = 1

@@ -1,0 +1,1 @@
+SELECT id, branch, name FROM aicam_branches LIMIT 10;

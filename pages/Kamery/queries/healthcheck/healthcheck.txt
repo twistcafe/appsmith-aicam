@@ -1,0 +1,20 @@
+SELECT 
+    b.id AS branch_id,
+    b.branch AS branch_code,
+    b.name AS branch_name,
+    b.opening_time AS branch_opening_time,
+    b.closing_time AS branch_closing_time,
+    COUNT(s.id) AS count_last_hour,
+    MAX(s.created_at) AS last_screenshot_time,
+    CASE 
+        WHEN COUNT(s.id) >= 60 * 0.85 THEN 1
+        ELSE 0
+    END AS healthcheck
+FROM 
+    aicam_branches b
+LEFT JOIN 
+    aicam_screenshots s 
+    ON s.branch_id = b.id AND s.created_at >= NOW() - INTERVAL 1 HOUR
+WHERE b.enabled = 1
+GROUP BY 
+    b.id, b.branch, b.name, b.opening_time, b.closing_time;

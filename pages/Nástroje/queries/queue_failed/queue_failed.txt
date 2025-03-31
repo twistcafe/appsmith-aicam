@@ -1,0 +1,5 @@
+SELECT id, created_at, payload
+FROM aicam_queue
+WHERE status = 'failed'
+AND created_at >= NOW() - INTERVAL 7 DAY
+ORDER BY created_at DESC

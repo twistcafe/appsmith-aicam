@@ -1,0 +1,10 @@
+--- remove relationship
+DELETE FROM aicam_branch_scenarios
+WHERE scenario_id = {{data_table.selectedRow.id}}
+;
+
+--- add relationships again
+INSERT INTO aicam_branch_scenarios (branch_id, scenario_id)
+VALUES
+{{ update_form.formData.branch_scenario.map(i => `(${i}, ${data_table.selectedRow.id})`).join(',') }}
+;

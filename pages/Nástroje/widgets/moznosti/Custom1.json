@@ -1,0 +1,67 @@
+{
+  "backgroundColor": "#FFFFFF",
+  "borderColor": "#E0DEDE",
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "borderWidth": "1",
+  "bottomRow": 70,
+  "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+  "defaultModel": "",
+  "dynamicBindingPathList": [
+    {
+      "key": "theme"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "boxShadow"
+    }
+  ],
+  "dynamicHeight": "FIXED",
+  "dynamicTriggerPathList": [
+    {
+      "key": "onResetClick"
+    }
+  ],
+  "events": [
+    "onResetClick"
+  ],
+  "isCanvas": false,
+  "isLoading": false,
+  "isSearchWildcard": true,
+  "isVisible": true,
+  "key": "tdpd556868",
+  "leftColumn": 0,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "mobileBottomRow": 31,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 23,
+  "mobileTopRow": 1,
+  "needsErrorInfo": false,
+  "onResetClick": "{{showAlert('Successfully reset!!', '');}}",
+  "originalBottomRow": 71,
+  "originalTopRow": 11,
+  "parentColumnSpace": 14.1875,
+  "parentId": "pmtnu7i6v0",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "rightColumn": 63,
+  "shouldScrollContents": true,
+  "srcDoc": {
+    "css": "canvas {\n  border: 1px solid #ccc;\n  cursor: crosshair;\n}\n\n#coords {\n  margin-top: 10px;\n  white-space: pre-wrap;\n  font-family: monospace;\n}",
+    "html": "<input type=\"file\" id=\"imageUpload\" accept=\"image/*\"><br><br>\n  <canvas id=\"canvas\" width=\"640\" height=\"360\"></canvas><br><br>\n  <div id=\"coords\"></div>",
+    "js": "function initApp() {\n  const canvas = document.getElementById(\"canvas\");\n  const ctx = canvas.getContext(\"2d\");\n  let image = new Image();\n  let points = [];\n  let isClosed = false;\n  let imageLoaded = false;\n  document.getElementById(\"imageUpload\").addEventListener(\"change\", function (e) {\n    const file = e.target.files[0];\n    const reader = new FileReader();\n    reader.onload = function (event) {\n      image.onload = function () {\n        points = [];\n        isClosed = false;\n        imageLoaded = true;\n        document.getElementById(\"coords\").textContent = \"\";\n        ctx.clearRect(0, 0, canvas.width, canvas.height);\n        ctx.drawImage(image, 0, 0, canvas.width, canvas.height);\n        redraw();\n      };\n      image.src = event.target.result;\n    };\n    if (file) reader.readAsDataURL(file);\n  });\n  canvas.addEventListener(\"click\", function (e) {\n    if (!imageLoaded || isClosed) return;\n    const rect = canvas.getBoundingClientRect();\n    const x = Math.round(e.clientX - rect.left);\n    const y = Math.round(e.clientY - rect.top);\n    if (points.length >= 3) {\n      const [fx, fy] = points[0];\n      const dist = Math.hypot(x - fx, y - fy);\n      if (dist < 10) {\n        isClosed = true;\n        // Přidej počáteční bod znovu, aby se polygon uzavřel\n        points.push([fx, fy]);\n        redraw();\n        return;\n      }\n    }\n    points.push([x, y]);\n    redraw();\n  });\n  function redraw() {\n    ctx.clearRect(0, 0, canvas.width, canvas.height);\n    ctx.drawImage(image, 0, 0, canvas.width, canvas.height);\n    if (points.length > 0) {\n      ctx.beginPath();\n      ctx.moveTo(points[0][0], points[0][1]);\n      for (let i = 1; i < points.length; i++) {\n        ctx.lineTo(points[i][0], points[i][1]);\n      }\n      ctx.strokeStyle = \"red\";\n      ctx.lineWidth = 2;\n      ctx.stroke();\n    }\n    for (let point of points) {\n      ctx.beginPath();\n      ctx.arc(point[0], point[1], 3, 0, 2 * Math.PI);\n      ctx.fillStyle = \"red\";\n      ctx.fill();\n    }\n    document.getElementById(\"coords\").textContent = JSON.stringify(points);\n  }\n}\nappsmith.onReady(() => {\n  /*\n   * This handler function will get called when parent application is ready.\n   * Initialize your component here\n   * more info - https://docs.appsmith.com/reference/widgets/custom#onready\n   */\n  initApp();\n});"
+  },
+  "theme": "{{appsmith.theme}}",
+  "topRow": 10,
+  "type": "CUSTOM_WIDGET",
+  "uncompiledSrcDoc": {
+    "css": "canvas {\n      border: 1px solid #ccc;\n      cursor: crosshair;\n    }\n    #coords {\n      margin-top: 10px;\n      white-space: pre-wrap;\n      font-family: monospace;\n    }",
+    "html": "<input type=\"file\" id=\"imageUpload\" accept=\"image/*\"><br><br>\n  <canvas id=\"canvas\" width=\"640\" height=\"360\"></canvas><br><br>\n  <div id=\"coords\"></div>",
+    "js": "function initApp() {\n\tconst canvas = document.getElementById(\"canvas\");\n    const ctx = canvas.getContext(\"2d\");\n    let image = new Image();\n    let points = [];\n    let isClosed = false;\n    let imageLoaded = false;\n\n    document.getElementById(\"imageUpload\").addEventListener(\"change\", function(e) {\n      const file = e.target.files[0];\n      const reader = new FileReader();\n      reader.onload = function(event) {\n        image.onload = function() {\n          points = [];\n          isClosed = false;\n          imageLoaded = true;\n          document.getElementById(\"coords\").textContent = \"\";\n\n          ctx.clearRect(0, 0, canvas.width, canvas.height);\n          ctx.drawImage(image, 0, 0, canvas.width, canvas.height);\n          redraw();\n        };\n        image.src = event.target.result;\n      };\n      if (file) reader.readAsDataURL(file);\n    });\n\n    canvas.addEventListener(\"click\", function(e) {\n      if (!imageLoaded || isClosed) return;\n\n      const rect = canvas.getBoundingClientRect();\n      const x = Math.round(e.clientX - rect.left);\n      const y = Math.round(e.clientY - rect.top);\n\n      if (points.length >= 3) {\n        const [fx, fy] = points[0];\n        const dist = Math.hypot(x - fx, y - fy);\n        if (dist < 10) {\n          isClosed = true;\n          // Přidej počáteční bod znovu, aby se polygon uzavřel\n          points.push([fx, fy]);\n          redraw();\n          return;\n        }\n      }\n\n      points.push([x, y]);\n      redraw();\n    });\n\n    function redraw() {\n      ctx.clearRect(0, 0, canvas.width, canvas.height);\n      ctx.drawImage(image, 0, 0, canvas.width, canvas.height);\n\n      if (points.length > 0) {\n        ctx.beginPath();\n        ctx.moveTo(points[0][0], points[0][1]);\n        for (let i = 1; i < points.length; i++) {\n          ctx.lineTo(points[i][0], points[i][1]);\n        }\n        ctx.strokeStyle = \"red\";\n        ctx.lineWidth = 2;\n        ctx.stroke();\n      }\n\n      for (let point of points) {\n        ctx.beginPath();\n        ctx.arc(point[0], point[1], 3, 0, 2 * Math.PI);\n        ctx.fillStyle = \"red\";\n        ctx.fill();\n      }\n\n      document.getElementById(\"coords\").textContent = JSON.stringify(points);\n    }\n}\n\nappsmith.onReady(() => {\n\t/*\n\t * This handler function will get called when parent application is ready.\n\t * Initialize your component here\n\t * more info - https://docs.appsmith.com/reference/widgets/custom#onready\n\t */\n\tinitApp();\n});"
+  },
+  "version": 1,
+  "widgetId": "8atxnah5hx",
+  "widgetName": "Custom1"
+}

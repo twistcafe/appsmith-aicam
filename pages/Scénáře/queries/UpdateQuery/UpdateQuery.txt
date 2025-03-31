@@ -1,0 +1,7 @@
+--- update scenario
+UPDATE aicam_scenarios SET
+		name = '{{update_form.fieldState.name.isVisible ? update_form.formData.name : update_form.sourceData.name}}',
+		prompt = '{{update_form.fieldState.prompt.isVisible ? update_form.formData.prompt : update_form.sourceData.prompt}}',
+		enabled = '{{update_form.fieldState.enabled.isVisible ? update_form.formData.enabled : update_form.sourceData.enabled}}'
+WHERE id = {{data_table.selectedRow.id}}
+;

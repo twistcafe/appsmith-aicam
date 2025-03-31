@@ -1,0 +1,18 @@
+INSERT INTO aicam_branches (
+	branch,
+	name,
+	rtsp,
+	opening_time,
+	closing_time,
+	polygon_yellow,
+	polygon_green,
+	polygon_blue)
+VALUES (
+	'{{insert_form.formData.branch}}',
+	'{{insert_form.formData.name}}',
+	'{{insert_form.formData.rtsp}}',
+	'{{insert_form.formData.opening_time}}',
+	'{{insert_form.formData.closing_time}}',
+	'{{insert_form.formData.polygon_yellow}}',
+	'{{insert_form.formData.polygon_green}}',
+	'{{insert_form.formData.polygon_blue}}');

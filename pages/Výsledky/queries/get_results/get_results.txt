@@ -1,0 +1,19 @@
+SELECT 
+    r.scenario_id AS `Scenario ID`,
+    s.name AS `Scenario Name`,
+    r.screenshot_id AS `Screenshot ID`,
+    sc.branch_id AS `Branch ID`,
+    b.branch AS `Branch Code`,
+    b.name AS `Branch Name`,
+    r.created_at AS `Created At`,
+		r.payload as `Payload`,
+		r.status as `Status`
+FROM aicam_results r
+LEFT JOIN aicam_scenarios s ON r.scenario_id = s.id
+LEFT JOIN aicam_screenshots sc ON r.screenshot_id = sc.id
+LEFT JOIN aicam_branches b ON sc.branch_id = b.id
+WHERE r.scenario_id = {{filter_scenario.selectedOptionValue}}
+AND {{filter_errors_only.isSwitchedOn ? `r.status = 'failed'` : `r.status = 'success'`}}
+AND b.id LIKE'%{{filter_branches.selectedOptionValue || ""}}%'
+ORDER BY r.created_at DESC
+LIMIT 100;

@@ -1,0 +1,11 @@
+UPDATE aicam_branches SET
+		branch = '{{update_form.fieldState.branch.isVisible ? update_form.formData.branch : update_form.sourceData.branch}}',
+		name = '{{update_form.fieldState.name.isVisible ? update_form.formData.name : update_form.sourceData.name}}',
+    rtsp = '{{update_form.fieldState.rtsp.isVisible ? update_form.formData.rtsp : update_form.sourceData.rtsp}}',
+		opening_time = '{{update_form.fieldState.opening_time.isVisible ? update_form.formData.opening_time : update_form.sourceData.opening_time}}',
+		closing_time = '{{update_form.fieldState.closing_time.isVisible ? update_form.formData.closing_time : update_form.sourceData.closing_time}}',
+		polygon_yellow = '{{update_form.fieldState.polygon_yellow.isVisible ? update_form.formData.polygon_yellow : update_form.sourceData.polygon_yellow}}',
+		polygon_green = '{{update_form.fieldState.polygon_green.isVisible ? update_form.formData.polygon_green : update_form.sourceData.polygon_green}}',
+		polygon_blue = '{{update_form.fieldState.polygon_blue.isVisible ? update_form.formData.polygon_blue : update_form.sourceData.polygon_blue}}',
+		enabled = '{{update_form.fieldState.enabled.isVisible ? update_form.formData.enabled : update_form.sourceData.enabled}}'
+WHERE id = {{data_table.selectedRow.id}};
