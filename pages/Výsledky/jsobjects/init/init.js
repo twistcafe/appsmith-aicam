@@ -5,6 +5,6 @@ export default {
 			60000
 		)
 		
-		setTimeout(() => get_results.run(), 500)
+		setTimeout(() => get_results.run(), 1000)
 	}
 }
