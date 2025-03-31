@@ -71,7 +71,7 @@
   "flexVerticalAlignment": "stretch",
   "isCanvas": true,
   "isLoading": false,
-  "isVisible": "{{stats.responseMeta.isExecutionSuccess}}",
+  "isVisible": "{{stats_scenario_camera.responseMeta.isExecutionSuccess}}",
   "key": "8umuutp7qi",
   "leftColumn": 11,
   "maxDynamicHeight": 9000,

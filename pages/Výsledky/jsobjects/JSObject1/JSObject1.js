@@ -1,5 +1,5 @@
 export default {
 	filter_branchesonOptionChange () {
-		stats.run()
+		stats_scenario_camera.run()
 	}
 }
