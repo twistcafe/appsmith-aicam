@@ -273,7 +273,7 @@
       "allowSameOptionsInNewRow": true,
       "cellBackground": "",
       "columnType": "html",
-      "computedValue": "{{(() => { const tableData = Table1.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ('<pre>' +  currentRow[\"Payload\"] + '</pre>')) : '<pre>' +  currentRow[\"Payload\"] + '</pre>' })()}}",
+      "computedValue": "{{(() => { const tableData = Table1.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ('<pre>' + currentRow[\"Payload\"]  + '</pre>')) : '<pre>' + currentRow[\"Payload\"]  + '</pre>' })()}}",
       "currencyCode": "USD",
       "decimals": 0,
       "enableFilter": true,
