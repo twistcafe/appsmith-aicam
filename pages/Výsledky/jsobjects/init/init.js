@@ -6,6 +6,7 @@ export default {
 		)
 		
 		// fire once
-		setTimeout(get_results.run(), 300)
+		setTimeout(get_results.run(), 1000)
+		return true
 	}
 }
