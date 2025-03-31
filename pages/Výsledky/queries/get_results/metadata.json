@@ -5,12 +5,12 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT \n    r.scenario_id AS `Scenario ID`,\n    s.name AS `Scenario Name`,\n    r.screenshot_id AS `Screenshot ID`,\n    sc.branch_id AS `Branch ID`,\n    b.branch AS `Branch Code`,\n    b.name AS `Branch Name`,\n    r.created_at AS `Created At`,\n    r.payload AS `Payload`,\n    r.status AS `Status`\nFROM aicam_results r\nLEFT JOIN aicam_scenarios s ON r.scenario_id = s.id\nLEFT JOIN aicam_screenshots sc ON r.screenshot_id = sc.id\nLEFT JOIN aicam_branches b ON sc.branch_id = b.id\nWHERE r.scenario_id = {{filter_scenario.selectedOptionValue}}\nAND r.status = (\n    CASE \n        WHEN {{filter_errors_only.isSwitchedOn}} THEN 'failed'\n        ELSE 'success'\n    END\n)\nAND (\n    {{filter_branches.selectedOptionValue ? \"b.id LIKE '\" + filter_branches.selectedOptionValue + \"%'\" : \"1=1\"}}\n)\nORDER BY r.created_at DESC\nLIMIT 100;",
+      "body": "SELECT \n    r.scenario_id AS `Scenario ID`,\n    s.name AS `Scenario Name`,\n    r.screenshot_id AS `Screenshot ID`,\n    sc.branch_id AS `Branch ID`,\n    b.branch AS `Branch Code`,\n    b.name AS `Branch Name`,\n    r.created_at AS `Created At`,\n    r.payload as `Payload`,\n    r.status as `Status`\nFROM aicam_results r\nLEFT JOIN aicam_scenarios s ON r.scenario_id = s.id\nLEFT JOIN aicam_screenshots sc ON r.screenshot_id = sc.id\nLEFT JOIN aicam_branches b ON sc.branch_id = b.id\nWHERE r.scenario_id = {{filter_scenario.selectedOptionValue}}\nAND r.status = {{filter_errors_only.isSwitchedOn ? \"'failed'\" : \"'success'\"}}\nAND b.id LIKE {{filter_branches.selectedOptionValue ? `'${filter_branches.selectedOptionValue}%'` : \"'%'\" }}\nORDER BY r.created_at DESC\nLIMIT 100;",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
         {
-          "value": true
+          "value": false
         }
       ],
       "timeoutInMillisecond": 10000

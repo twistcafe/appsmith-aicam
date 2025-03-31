@@ -6,21 +6,14 @@ SELECT
     b.branch AS `Branch Code`,
     b.name AS `Branch Name`,
     r.created_at AS `Created At`,
-    r.payload AS `Payload`,
-    r.status AS `Status`
+    r.payload as `Payload`,
+    r.status as `Status`
 FROM aicam_results r
 LEFT JOIN aicam_scenarios s ON r.scenario_id = s.id
 LEFT JOIN aicam_screenshots sc ON r.screenshot_id = sc.id
 LEFT JOIN aicam_branches b ON sc.branch_id = b.id
 WHERE r.scenario_id = {{filter_scenario.selectedOptionValue}}
-AND r.status = (
-    CASE 
-        WHEN {{filter_errors_only.isSwitchedOn}} THEN 'failed'
-        ELSE 'success'
-    END
-)
-AND (
-    {{filter_branches.selectedOptionValue ? "b.id LIKE '" + filter_branches.selectedOptionValue + "%'" : "1=1"}}
-)
+AND r.status = {{filter_errors_only.isSwitchedOn ? "'failed'" : "'success'"}}
+AND b.id LIKE {{filter_branches.selectedOptionValue ? `'${filter_branches.selectedOptionValue}%'` : "'%'" }}
 ORDER BY r.created_at DESC
 LIMIT 100;
