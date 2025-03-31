@@ -56,7 +56,7 @@
         "key": "bodyFormData[1].value"
       }
     ],
-    "executeOnLoad": false,
+    "executeOnLoad": true,
     "name": "submit_prompt",
     "pageId": "Nástroje",
     "userSetOnLoad": false

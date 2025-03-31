@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 43,
+  "bottomRow": 75,
   "dynamicBindingPathList": [
     {
       "key": "truncateButtonColor"
@@ -30,7 +30,7 @@
   "fontSize": "1rem",
   "fontStyle": "",
   "isLoading": false,
-  "isVisible": "{{!send_prompt2.isLoading && send_prompt2.responseMeta.isExecutionSuccess && send_prompt2.data && Object.keys(send_prompt2.data).length > 0}}",
+  "isVisible": "{{!submit_prompt.isLoading && submit_prompt.responseMeta.isExecutionSuccess && submit_prompt.data && Object.keys(submit_prompt.data).length > 0}}",
   "key": "uqie2t6lie",
   "leftColumn": 0,
   "maxDynamicHeight": 9000,
@@ -41,7 +41,7 @@
   "mobileRightColumn": 16,
   "mobileTopRow": 35,
   "needsErrorInfo": false,
-  "originalBottomRow": 51,
+  "originalBottomRow": 43,
   "originalTopRow": 39,
   "overflow": "NONE",
   "parentColumnSpace": 13.181640625,
@@ -52,7 +52,7 @@
   "rightColumn": 63,
   "shouldScrollContents": true,
   "shouldTruncate": false,
-  "text": "{{\nutils.convertToLi(\nsend_prompt2.data[0].content\n)\n}}",
+  "text": "{{\nutils.convertToLi(\nsubmit_prompt.data[0].content\n)\n}}",
   "textAlign": "LEFT",
   "textColor": "#231F20",
   "topRow": 39,
