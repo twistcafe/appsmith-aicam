@@ -1,6 +1,6 @@
 {
-  "gitSyncId": "67d86fc1b513f95319b91273_9824c8d9-b3a1-45b3-b073-c507e083ca06",
-  "id": "Nástroje_send_prompt",
+  "gitSyncId": "67d86fc1b513f95319b91273_d49f3fdd-928d-4686-bd07-b8155d58cb26",
+  "id": "Nástroje_submit_prompt",
   "pluginId": "restapi-plugin",
   "pluginType": "API",
   "unpublishedAction": {
@@ -11,7 +11,7 @@
           "value": "multipart/form-data"
         }
       ],
-      "body": "{{\n\t{\n\t\tphoto: FilePicker1.files[0].data,\n\t\tfilename: FilePicker1.files[0].name,\n\t\tfiletype: FilePicker1.files[0].type,\n\t\tprompt: Input1.text\n\t}\n}}",
+      "body": "",
       "bodyFormData": [
         {
           "key": "photo",
@@ -21,7 +21,7 @@
         {
           "key": "data",
           "type": "JSON",
-          "value": "{{\nJSON.stringify({ prompt: prompt.text, name: FilePicker1.files.length && FilePicker1.files[0].name || '', type: FilePicker1.files.length && FilePicker1.files[0].type || '' })\n}}"
+          "value": "{{\n  JSON.stringify({ prompt: prompt.text, name: FilePicker1.files.length && FilePicker1.files[0].name || '', type: FilePicker1.files.length && FilePicker1.files[0].type || '' })\n  }}"
         }
       ],
       "encodeParamsToggle": true,
@@ -39,7 +39,7 @@
         }
       ],
       "queryParameters": [],
-      "timeoutInMillisecond": 15000
+      "timeoutInMillisecond": 10000
     },
     "confirmBeforeExecute": false,
     "datasource": {
@@ -50,18 +50,15 @@
     },
     "dynamicBindingPathList": [
       {
-        "key": "body"
+        "key": "bodyFormData[0].value"
       },
       {
         "key": "bodyFormData[1].value"
-      },
-      {
-        "key": "bodyFormData[0].value"
       }
     ],
     "executeOnLoad": false,
-    "name": "send_prompt",
+    "name": "submit_prompt",
     "pageId": "Nástroje",
-    "userSetOnLoad": true
+    "userSetOnLoad": false
   }
 }

@@ -32,7 +32,7 @@
   "mobileRightColumn": 62,
   "mobileTopRow": 33,
   "needsErrorInfo": false,
-  "onClick": "{{send_prompt.run()}}",
+  "onClick": "{{submit_prompt.run()}}",
   "originalBottomRow": 24,
   "originalTopRow": 20,
   "parentId": "4q3curp60m",
