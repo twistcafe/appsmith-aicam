@@ -12,9 +12,15 @@ FROM aicam_results r
 LEFT JOIN aicam_scenarios s ON r.scenario_id = s.id
 LEFT JOIN aicam_screenshots sc ON r.screenshot_id = sc.id
 LEFT JOIN aicam_branches b ON sc.branch_id = b.id
-WHERE 1=1
-  AND r.scenario_id = {{filter_scenario.selectedOptionValue}}
-  {{ filter_errors_only.isSwitchedOn ? "AND r.status = 'failed'" : "AND r.status = 'success'" }}
-  {{ filter_branches.selectedOptionValue ? "AND b.id LIKE '" + filter_branches.selectedOptionValue + "%'" : "" }}
+WHERE r.scenario_id = {{filter_scenario.selectedOptionValue}}
+AND r.status = (
+    CASE 
+        WHEN {{filter_errors_only.isSwitchedOn}} THEN 'failed'
+        ELSE 'success'
+    END
+)
+AND (
+    {{filter_branches.selectedOptionValue ? "b.id LIKE '" + filter_branches.selectedOptionValue + "%'" : "1=1"}}
+)
 ORDER BY r.created_at DESC
 LIMIT 100;
