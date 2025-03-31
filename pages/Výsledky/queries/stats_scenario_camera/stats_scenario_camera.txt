@@ -1,0 +1,33 @@
+SELECT 
+  'today' AS label,
+  IFNULL(CEIL(SUM(CASE WHEN ar.status = 'success' THEN 1 ELSE 0 END) / NULLIF(COUNT(*), 0) * 100), 0) AS success_ratio_percent
+FROM aicam_results ar
+JOIN aicam_screenshots ascr ON ar.screenshot_id = ascr.id
+WHERE DATE(ar.created_at) = CURDATE()
+  AND (ascr.branch_id = {{filter_branches.selectedOptionValue || ""}} OR {{filter_branches.selectedOptionValue || ""}} = "")
+
+
+UNION ALL
+
+SELECT 
+  'yesterday' AS label,
+  IFNULL(CEIL(SUM(CASE WHEN ar.status = 'success' THEN 1 ELSE 0 END) / NULLIF(COUNT(*), 0) * 100), 0) AS success_ratio_percent
+FROM aicam_results ar
+JOIN aicam_screenshots ascr ON ar.screenshot_id = ascr.id
+WHERE DATE(ar.created_at) = CURDATE() - INTERVAL 1 DAY
+  AND (ascr.branch_id = {{filter_branches.selectedOptionValue || ""}} OR {{filter_branches.selectedOptionValue || ""}} = "")
+	
+UNION ALL
+
+SELECT 
+  'last_7_days_avg' AS label,
+  IFNULL(CEIL(AVG(daily_ratio)), 0) AS success_ratio_percent
+FROM (
+  SELECT 
+    DATE(ar.created_at) AS day,
+    SUM(CASE WHEN ar.status = 'success' THEN 1 ELSE 0 END) / NULLIF(COUNT(*), 0) * 100 AS daily_ratio
+  FROM aicam_results ar
+  JOIN aicam_screenshots ascr ON ar.screenshot_id = ascr.id
+  WHERE ar.created_at >= CURDATE() - INTERVAL 6 DAY
+    AND (ascr.branch_id = {{filter_branches.selectedOptionValue || ""}} OR {{filter_branches.selectedOptionValue || ""}} = "")
+) AS daily_stats;

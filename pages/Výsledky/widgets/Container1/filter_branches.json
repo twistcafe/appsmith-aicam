@@ -47,7 +47,7 @@
   "mobileRightColumn": 20,
   "mobileTopRow": 79,
   "needsErrorInfo": false,
-  "onOptionChange": "{{get_results.run()}}",
+  "onOptionChange": "{{get_results.run().then(() => {\n  JSObject1.filter_branchesonOptionChange();\n});}}",
   "optionLabel": "label",
   "optionValue": "value",
   "originalBottomRow": 7,
