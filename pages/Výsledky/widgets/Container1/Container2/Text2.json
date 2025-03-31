@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 93,
+  "bottomRow": 75,
   "dynamicBindingPathList": [
     {
       "key": "truncateButtonColor"
@@ -33,20 +33,20 @@
   "originalBottomRow": 93,
   "originalTopRow": 89,
   "overflow": "NONE",
-  "parentColumnSpace": 3.7265625,
-  "parentId": "213x1rwnxe",
+  "parentColumnSpace": 4.2890625,
+  "parentId": "a1cjff1okl",
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 19,
+  "rightColumn": 19.934426229508198,
   "shouldTruncate": false,
   "text": "Aktualizujeme každou minutu.",
   "textAlign": "LEFT",
   "textColor": "#231F20",
-  "topRow": 89,
+  "topRow": 71,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",
   "version": 1,
-  "widgetId": "0pbz254i3c",
+  "widgetId": "e3q2xq3jaq",
   "widgetName": "Text2"
 }

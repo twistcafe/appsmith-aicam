@@ -3,20 +3,20 @@
   "backgroundColor": "{{appsmith.theme.colors.backgroundColor}}",
   "borderColor": "#E0DEDE",
   "borderWidth": "0",
-  "bottomRow": 123,
+  "bottomRow": 100,
   "boxShadow": "NONE",
   "children": [
     {
-      "bottomRow": 1020,
+      "bottomRow": 770,
       "canExtend": false,
       "containerStyle": "none",
       "detachFromLayout": true,
       "isLoading": false,
       "isVisible": true,
       "leftColumn": 0,
-      "minHeight": 355.5,
+      "minHeight": 337.5,
       "parentColumnSpace": 1,
-      "parentId": "um1bpk3jou",
+      "parentId": "9mdec5wz55",
       "parentRowSpace": 1,
       "props": {
         "canExtend": false,
@@ -25,12 +25,12 @@
         "detachFromLayout": true
       },
       "renderMode": "CANVAS",
-      "rightColumn": 238.5,
+      "rightColumn": 274.5,
       "topRow": 0,
       "type": "CANVAS_WIDGET",
       "version": 1,
-      "widgetId": "213x1rwnxe",
-      "widgetName": "Canvas1"
+      "widgetId": "a1cjff1okl",
+      "widgetName": "Canvas3"
     }
   ],
   "containerStyle": "card",
@@ -49,8 +49,8 @@
   "isDeprecated": false,
   "isLoading": false,
   "isVisible": true,
-  "key": "z3oi2fb0al",
-  "leftColumn": 1,
+  "key": "hkwca2nzij",
+  "leftColumn": 0,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 10,
   "minWidth": 450,
@@ -62,14 +62,14 @@
     "selectionBGCSSVar": "--on-canvas-ui-widget-selection",
     "selectionColorCSSVar": "--on-canvas-ui-widget-focus"
   },
-  "originalBottomRow": 123,
-  "originalTopRow": 21,
-  "parentColumnSpace": 3.7265625,
-  "parentId": "0",
+  "originalBottomRow": 100,
+  "originalTopRow": 23,
+  "parentColumnSpace": 4.2890625,
+  "parentId": "213x1rwnxe",
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 64,
+  "rightColumn": 61,
   "searchTags": [
     "div",
     "parent",
@@ -81,9 +81,9 @@
     "Layout"
   ],
   "thumbnailSVG": "/static/media/thumbnail.6cb355b93146b5347bbb048a568ed446.svg",
-  "topRow": 21,
+  "topRow": 23,
   "type": "CONTAINER_WIDGET",
   "version": 1,
-  "widgetId": "um1bpk3jou",
-  "widgetName": "Container1"
+  "widgetId": "9mdec5wz55",
+  "widgetName": "Container2"
 }
