@@ -136,7 +136,7 @@
   "parentColumnSpace": 4.2890625,
   "parentId": "a1cjff1okl",
   "parentRowSpace": 10,
-  "primaryColumnId": "id",
+  "primaryColumnId": "Scenario_ID",
   "primaryColumns": {
     "Branch_Code": {
       "alias": "Branch Code",

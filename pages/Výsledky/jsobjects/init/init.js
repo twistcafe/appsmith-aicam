@@ -4,5 +4,9 @@ export default {
 			get_results.run(),
 			60000
 		)
+		
+		if (filter_branches.isValid) {
+			get_results.run()
+		}
 	}
 }
