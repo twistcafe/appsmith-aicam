@@ -6,7 +6,8 @@ export default {
 		)
 		
 		if (filter_branches.isValid) {
-			get_results.run()
+			setTimeout(() => {get_results.run()}, 100)
+			
 		}
 	}
 }
