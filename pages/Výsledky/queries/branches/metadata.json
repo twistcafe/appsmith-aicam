@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT id, branch, name FROM aicam_branches LIMIT 100;",
+      "body": "SELECT id, branch, name FROM aicam_branches WHERE enabled = 1 LIMIT 100;",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
