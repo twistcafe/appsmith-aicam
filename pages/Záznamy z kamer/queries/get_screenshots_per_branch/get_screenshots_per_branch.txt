@@ -1,1 +1,1 @@
-SELECT * FROM aicam_screenshots WHERE branch_id = {{branch.selectedOptionValue}} ORDER BY created_at DESC LIMIT 10
+SELECT * FROM aicam_screenshots WHERE branch_id = {{branch.selectedOptionValue}} ORDER BY created_at DESC LIMIT 100

@@ -9,12 +9,12 @@
   "animateLoading": true,
   "backgroundColor": "transparent",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 85,
+  "bottomRow": 110,
   "boxShadow": "none",
   "children": [
     {
       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-      "bottomRow": 690,
+      "bottomRow": 940,
       "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
       "canExtend": false,
       "containerStyle": "none",
@@ -118,7 +118,7 @@
   "onItemClick": "{{navigateTo('https://drive.google.com/file/d/' + currentItem.id + '/view', {}, 'NEW_WINDOW');}}",
   "originalBottomRow": 85,
   "originalTopRow": 16,
-  "pageSize": 4,
+  "pageSize": 6,
   "parentColumnSpace": 15.109375,
   "parentId": "0",
   "parentRowSpace": 10,
