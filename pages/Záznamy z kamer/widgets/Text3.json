@@ -48,7 +48,7 @@
   "responsiveBehavior": "fill",
   "rightColumn": 26,
   "shouldTruncate": false,
-  "text": "Zobrazuje posledních 10 záznamů.",
+  "text": "Zobrazuje posledních 100 záznamů.",
   "textAlign": "LEFT",
   "textColor": "#231F20",
   "topRow": 12,
