@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "INSERT INTO aicam_branches (\n\tbranch,\n\tname,\n\trtsp,\n\topening_time,\n\tclosing_time,\n\tpolygon_yellow,\n\tpolygon_green,\n\tpolygon_blue)\nVALUES (\n\t'{{insert_form.formData.branch}}',\n\t'{{insert_form.formData.name}}',\n\t'{{insert_form.formData.rtsp}}',\n\t'{{insert_form.formData.opening_time}}',\n\t'{{insert_form.formData.closing_time}}',\n\t'{{insert_form.formData.polygon_yellow}}',\n\t'{{insert_form.formData.polygon_green}}',\n\t'{{insert_form.formData.polygon_blue}}');",
+      "body": "INSERT INTO aicam_branches (\n\tbranch,\n\tname,\n\trtsp,\n\topening_time,\n\tclosing_time,\n\tpolygon_yellow,\n\tpolygon_green,\n\tpolygon_blue,\n\ttelegram_group,\n\ttelegram_topic)\nVALUES (\n\t'{{insert_form.formData.branch}}',\n\t'{{insert_form.formData.name}}',\n\t'{{insert_form.formData.rtsp}}',\n\t'{{insert_form.formData.opening_time}}',\n\t'{{insert_form.formData.closing_time}}',\n\t'{{insert_form.formData.polygon_yellow}}',\n\t'{{insert_form.formData.polygon_green}}',\n\t'{{insert_form.formData.polygon_blue}}'),\n\t'{{insert_form.formData.telegram_group}}')\n\t'{{insert_form.formData.telegram_topic}}');",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

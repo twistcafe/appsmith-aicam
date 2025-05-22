@@ -7,5 +7,7 @@ UPDATE aicam_branches SET
 		polygon_yellow = '{{update_form.fieldState.polygon_yellow.isVisible ? update_form.formData.polygon_yellow : update_form.sourceData.polygon_yellow}}',
 		polygon_green = '{{update_form.fieldState.polygon_green.isVisible ? update_form.formData.polygon_green : update_form.sourceData.polygon_green}}',
 		polygon_blue = '{{update_form.fieldState.polygon_blue.isVisible ? update_form.formData.polygon_blue : update_form.sourceData.polygon_blue}}',
+		telegram_group = '{{update_form.fieldState.telegram_group.isVisible ? update_form.formData.telegram_group : update_form.sourceData.telegram_group}}',
+		telegram_topic = '{{update_form.fieldState.telegram_topic.isVisible ? update_form.formData.telegram_topic : update_form.sourceData.telegram_topic}}',
 		enabled = '{{update_form.fieldState.enabled.isVisible ? update_form.formData.enabled : update_form.sourceData.enabled}}'
 WHERE id = {{data_table.selectedRow.id}};

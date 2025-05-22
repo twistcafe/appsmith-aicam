@@ -6,7 +6,9 @@ INSERT INTO aicam_branches (
 	closing_time,
 	polygon_yellow,
 	polygon_green,
-	polygon_blue)
+	polygon_blue,
+	telegram_group,
+	telegram_topic)
 VALUES (
 	'{{insert_form.formData.branch}}',
 	'{{insert_form.formData.name}}',
@@ -15,4 +17,6 @@ VALUES (
 	'{{insert_form.formData.closing_time}}',
 	'{{insert_form.formData.polygon_yellow}}',
 	'{{insert_form.formData.polygon_green}}',
-	'{{insert_form.formData.polygon_blue}}');
+	'{{insert_form.formData.polygon_blue}}'),
+	'{{insert_form.formData.telegram_group}}')
+	'{{insert_form.formData.telegram_topic}}');
