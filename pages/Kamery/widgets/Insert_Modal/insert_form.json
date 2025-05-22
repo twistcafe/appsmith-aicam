@@ -166,6 +166,24 @@
     },
     {
       "key": "schema.__root_schema__.children.enabled.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.telegram_group.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.telegram_group.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.telegram_group.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.telegram_topic.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.telegram_topic.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.telegram_topic.accentColor"
     }
   ],
   "dynamicHeight": "FIXED",
@@ -414,6 +432,52 @@
           "originalIdentifier": "rtsp",
           "position": 3,
           "sourceData": "rtsp://trdlokafe2024:hardestpasswordever2024@89.24.71.57:554/stream2"
+        },
+        "telegram_group": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(insert_form.sourceData, insert_form.formData, insert_form.fieldState)}}",
+          "accessor": "telegram_group",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(insert_form.sourceData, insert_form.formData, insert_form.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "null",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.telegram_group))(insert_form.sourceData, insert_form.formData, insert_form.fieldState)}}",
+          "fieldType": "Text Input",
+          "iconAlign": "left",
+          "identifier": "telegram_group",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": true,
+          "isSpellCheck": false,
+          "isVisible": true,
+          "label": "Telegram Group",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "telegram_group",
+          "position": 9,
+          "sourceData": null
+        },
+        "telegram_topic": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(insert_form.sourceData, insert_form.formData, insert_form.fieldState)}}",
+          "accessor": "telegram_topic",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(insert_form.sourceData, insert_form.formData, insert_form.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "null",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.telegram_topic))(insert_form.sourceData, insert_form.formData, insert_form.fieldState)}}",
+          "fieldType": "Number Input",
+          "iconAlign": "left",
+          "identifier": "telegram_topic",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": true,
+          "isSpellCheck": false,
+          "isVisible": true,
+          "label": "Telegram Topic",
+          "labelTextSize": "0.875rem",
+          "maxNum": "99",
+          "minNum": "1",
+          "originalIdentifier": "telegram_topic",
+          "position": 10,
+          "sourceData": null
         }
       },
       "dataType": "object",

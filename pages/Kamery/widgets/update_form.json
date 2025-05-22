@@ -5,7 +5,7 @@
   "borderColor": "#2E3D4955",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "0",
-  "bottomRow": 85,
+  "bottomRow": 96,
   "bottomRowBeforeCollapse": 89,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "childStylesheet": {
@@ -212,7 +212,22 @@
       "key": "schema.__root_schema__.children.xn__Aktivn_8va.borderRadius"
     },
     {
-      "key": "schema.__root_schema__.children.enabled.borderRadius"
+      "key": "schema.__root_schema__.children.telegram_group.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.telegram_group.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.telegram_group.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.telegram_topic.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.telegram_topic.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.telegram_topic.accentColor"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
@@ -322,24 +337,22 @@
         "enabled": {
           "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(update_form.sourceData, update_form.formData, update_form.fieldState)}}",
           "accessor": "enabled",
-          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(update_form.sourceData, update_form.formData, update_form.fieldState)}}",
+          "alignWidget": "LEFT",
           "boxShadow": "none",
           "children": {},
-          "dataType": "string",
+          "dataType": "boolean",
           "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.enabled))(update_form.sourceData, update_form.formData, update_form.fieldState)}}",
-          "fieldType": "Text Input",
-          "iconAlign": "left",
+          "fieldType": "Switch",
           "identifier": "enabled",
           "isCustomField": false,
           "isDisabled": false,
           "isRequired": false,
-          "isSpellCheck": false,
           "isVisible": true,
-          "label": "Aktivní",
+          "label": "Enabled",
           "labelTextSize": "0.875rem",
           "originalIdentifier": "enabled",
           "position": 0,
-          "sourceData": ""
+          "sourceData": true
         },
         "name": {
           "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(update_form.sourceData, update_form.formData, update_form.fieldState)}}",
@@ -471,6 +484,52 @@
           "labelTextSize": "0.875rem",
           "originalIdentifier": "rtsp",
           "position": 3,
+          "sourceData": ""
+        },
+        "telegram_group": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(update_form.sourceData, update_form.formData, update_form.fieldState)}}",
+          "accessor": "telegram_group",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(update_form.sourceData, update_form.formData, update_form.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "string",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.telegram_group))(update_form.sourceData, update_form.formData, update_form.fieldState)}}",
+          "fieldType": "Text Input",
+          "iconAlign": "left",
+          "identifier": "telegram_group",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": true,
+          "isSpellCheck": false,
+          "isVisible": true,
+          "label": "Telegram Group",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "telegram_group",
+          "position": 10,
+          "sourceData": ""
+        },
+        "telegram_topic": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(update_form.sourceData, update_form.formData, update_form.fieldState)}}",
+          "accessor": "telegram_topic",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(update_form.sourceData, update_form.formData, update_form.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "string",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.telegram_topic))(update_form.sourceData, update_form.formData, update_form.fieldState)}}",
+          "fieldType": "Number Input",
+          "iconAlign": "left",
+          "identifier": "telegram_topic",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": true,
+          "isSpellCheck": false,
+          "isVisible": true,
+          "label": "Telegram Topic",
+          "labelTextSize": "0.875rem",
+          "maxNum": "99",
+          "minNum": "1",
+          "originalIdentifier": "telegram_topic",
+          "position": 11,
           "sourceData": ""
         },
         "xn__Aktivn_8va": {

@@ -32,14 +32,16 @@
     "closing_time",
     "polygon_yellow",
     "polygon_green",
-    "polygon_blue"
+    "polygon_blue",
+    "telegram_group",
+    "telegram_topic"
   ],
   "columnSizeMap": {
     "status": 75,
     "step": 62,
     "task": 245
   },
-  "columnUpdatedAt": 1743078389126,
+  "columnUpdatedAt": 1747915117065,
   "columnWidthMap": {
     "branch": 111,
     "enabled": 92
@@ -121,6 +123,12 @@
     },
     {
       "key": "primaryColumns.customColumn1.computedValue"
+    },
+    {
+      "key": "primaryColumns.telegram_group.computedValue"
+    },
+    {
+      "key": "primaryColumns.telegram_topic.computedValue"
     }
   ],
   "dynamicPropertyPathList": [
@@ -528,6 +536,74 @@
       "label": "RTSP",
       "notation": "standard",
       "originalId": "rtsp",
+      "sticky": "",
+      "textColor": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "telegram_group": {
+      "alias": "telegram_group",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "",
+      "columnType": "text",
+      "computedValue": "{{data_table.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"telegram_group\"]))}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "",
+      "horizontalAlignment": "LEFT",
+      "id": "telegram_group",
+      "index": 9,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "TG Group",
+      "notation": "standard",
+      "originalId": "telegram_group",
+      "sticky": "",
+      "textColor": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "telegram_topic": {
+      "alias": "telegram_topic",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "",
+      "columnType": "text",
+      "computedValue": "{{data_table.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"telegram_topic\"]))}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "",
+      "horizontalAlignment": "LEFT",
+      "id": "telegram_topic",
+      "index": 10,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "TG Topic",
+      "notation": "standard",
+      "originalId": "telegram_topic",
       "sticky": "",
       "textColor": "",
       "textSize": "0.875rem",
